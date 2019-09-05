@@ -29,12 +29,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Orders() {
-  const [orders, setOrders] = useState([]);
+const Orders = (props) => {
   useEffect(() => {
-    fetch('http://my-json-server.typicode.com/nischithbm/demo/orders')
-      .then(response => response.json())
-      .then(json => setOrders(json))
+    setTimeout(() => {
+      props.fetchOrders();
+    }, 1000);
   }, []);
 
   const classes = useStyles();
@@ -52,7 +51,7 @@ export default function Orders() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {orders.map(row => (
+          {props.orders.map(row => (
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
@@ -71,3 +70,9 @@ export default function Orders() {
     </React.Fragment>
   );
 }
+
+Orders.defaultProps = {
+  orders: []
+};
+
+export default Orders;

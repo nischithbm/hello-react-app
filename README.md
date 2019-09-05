@@ -79,4 +79,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 #### Fake REST API for Prototyping
 - https://jsonplaceholder.typicode.com/
 
-
+#### Redux Saga
+- https://redux-saga.js.org/
+- yarn add redux react-redux redux-saga
+- 
