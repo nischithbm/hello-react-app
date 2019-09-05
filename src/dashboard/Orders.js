@@ -1,6 +1,6 @@
 /* eslint-disable no-script-url */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -30,6 +30,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Orders() {
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    fetch('http://my-json-server.typicode.com/nischithbm/demo/orders')
+      .then(response => response.json())
+      .then(json => setOrders(json))
+  }, []);
+
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -45,7 +52,7 @@ export default function Orders() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => (
+          {orders.map(row => (
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
