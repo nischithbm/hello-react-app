@@ -81,5 +81,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 #### Redux Saga
 - https://redux-saga.js.org/
-- yarn add redux react-redux redux-saga
+- yarn add redux react-redux redux-saga redux-devtools-extension
 - 
