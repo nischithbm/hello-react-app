@@ -6,6 +6,13 @@ import configureStore from './redux/configureStore';
 
 import App from './App';
 import Dashboard from './dashboard';
+
+import {
+    MyReactComponent,
+    ReackHooksDemo,
+    ReackHooksDemoEnhanced
+} from './hooksdemo';
+
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
@@ -16,6 +23,7 @@ ReactDOM.render(
         <Router>
             <Route path="/" exact component={App} />
             <Route path="/dashboard/" component={Dashboard} />
+            <Route path="/demo/hooks" component={MyReactComponent} />
         </Router>
     </Provider>, document.getElementById('root'));
 
